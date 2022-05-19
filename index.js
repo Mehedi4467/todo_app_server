@@ -32,7 +32,6 @@ async function run() {
         const collection = client.db("todo_APP").collection("app_data");
         app.get('/task/:email', async (req, res) => {
             const email = req.params.email;
-            console.log(email)
             const query = { "task.email": email };
             const cursor = await collection.find(query).toArray();
 
